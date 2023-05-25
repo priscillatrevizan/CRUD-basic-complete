@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { FaTrash, FaEdit } from "react-icons/fa";
+import { FaTrash, FaEdit } from "react-icons-fa";
 import { toast } from "react-toastify";
 
 const Table = styled.table`
@@ -68,7 +68,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
                 <Tr>
                     <Th>Nome</Th>
                     <Th>Email</Th>
-                    <Th onlyWeb>Fone</Th>
+                    <Th onlyWeb>Telefone</Th>
                     <Th></Th>
                     <Th></Th>
                 </Tr>
@@ -78,7 +78,7 @@ const Grid = ({ users, setUsers, setOnEdit }) => {
                     <Tr key={i}>
                         <Td widht="30%">{item.nome}</Td>
                         <Td widht="30%">{item.email}</Td>
-                        <Td widht="20%"onlyWeb> {item.fone}</Td>
+                        <Td widht="20%"onlyWeb> {item.telefone}</Td>
                         <Td alignCenter width="5%">
                             <FaEdit onClick={() => handleEdit(item)}/>
                         </Td>

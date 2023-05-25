@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useRef } from "react";
-import styled from  "styled-components";
+import styled from "styled-components";
 import { toast } from "react-toastify";
 
 
@@ -49,7 +49,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
     
           user.nome.value = onEdit.nome;
           user.email.value = onEdit.email;
-          user.fone.value = onEdit.fone;
+          user.telefone.value = onEdit.telefone;
           user.data_nascimento.value = onEdit.data_nascimento;
         }
       }, [onEdit]);
@@ -62,7 +62,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         if(
             !user.nome.value ||
             !user.email.value ||
-            !user.fone.value ||
+            !user.telefone.value ||
             !user.data_nascimento.value 
         ) {
             return toast.warn("Preencha todos os campos!");
@@ -73,7 +73,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
               .put("http://localhost:8800/" + onEdit.id, {
                 nome: user.nome.value,
                 email: user.email.value,
-                fone: user.fone.value,
+                telefone: user.telefone.value,
                 data_nascimento: user.data_nascimento.value,
               })
               .then(({ data }) => toast.success(data))
@@ -83,7 +83,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
               .post("http://localhost:8800", {
                 nome: user.nome.value,
                 email: user.email.value,
-                fone: user.fone.value,
+                telefone: user.telefone.value,
                 data_nascimento: user.data_nascimento.value,
               })
               .then(({ data }) => toast.success(data))
@@ -91,7 +91,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
         }
         user.nome.value = "";
         user.email.value = "";
-        user.fone.value = "";
+        user.telefone.value = "";
         user.data_nascimento.value = "";
 
         setOnEdit(null);
@@ -112,7 +112,7 @@ const Form = ({ getUsers, onEdit, setOnEdit }) => {
 
             <InputArea>
                 <Label>Telefone</Label>
-                <Input name="fone" />
+                <Input name="telefone" />
             </InputArea>
 
             <InputArea>
