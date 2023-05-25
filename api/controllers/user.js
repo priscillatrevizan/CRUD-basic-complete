@@ -12,12 +12,12 @@ export const getUsers = (_, res) => {
 
 export const addUser = (req, res) => {
   const q =
-    "INSERT INTO usuarios(`nome`, `email`, `fone`, `data_nascimento`) VALUES(?)";
+    "INSERT INTO usuarios(`nome`, `email`, `telefone`, `data_nascimento`) VALUES(?)";
 
   const values = [
     req.body.nome,
     req.body.email,
-    req.body.fone,
+    req.body.telefone,
     req.body.data_nascimento,
   ];
 
@@ -30,12 +30,12 @@ export const addUser = (req, res) => {
 
 export const updateUser = (req, res) => {
   const q =
-    "UPDATE usuarios SET `nome` = ?, `email` = ?, `fone` = ?, `data_nascimento` = ? WHERE `id` = ?";
+    "UPDATE usuarios SET `nome` = ?, `email` = ?, `telefone` = ?, `data_nascimento` = ? WHERE `id` = ?";
 
   const values = [
     req.body.nome,
     req.body.email,
-    req.body.fone,
+    req.body.telefone,
     req.body.data_nascimento,
   ];
 
